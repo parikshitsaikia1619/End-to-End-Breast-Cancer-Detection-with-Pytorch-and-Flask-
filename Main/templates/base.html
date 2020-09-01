@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breast Cancer Detection</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+	<style>
+	.bg-dark {
+		background-color: #eb7eb4!important;
+	}
+	#result {
+		color: #0a1c4ed1;
+	}
+	</style>
+</head>
+
+<body style="background-image: url('https://i.ibb.co/J35PFsc/Banner-background-with-an-abstract-connections-design.jpg');background-size: cover;">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><h3>Breast Cancer Detection</h3><h6>By Parikshit Saikia</h6></a>
+        </div>
+    </nav>
+    <div class="container" >
+        <div id="content" style="margin-top:2em">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-6 bd" >
+			  <h3>Inspiration</h3>
+			  <p>Breast cancer is the most common form of cancer in women, and invasive ductal carcinoma (IDC) is the most common form of breast cancer. Accurately identifying and categorizing breast cancer subtypes is an important clinical task, and Machine Learning techniques can be used to save time and reduce error.</p>
+			  <p>Model test accuracy: 90.05%</p>
+			  <h3>Invasive Ductal Carcinoma (IDC)</h3>
+			  <p>Invasive ductal carcinoma (IDC), also known as infiltrating ductal carcinoma, is cancer that began growing in a milk duct and has invaded the fibrous or fatty tissue of the breast outside of the duct. IDC is the most common form of breast cancer, representing 80 percent of all breast cancer diagnoses</p>
+				<img src="https://i.ibb.co/hFNxPhM/B-img.png" style="height:280px"class="img-rounded" alt="Gesture">       
+			</div>
+			<div class="col-sm-6">
+				<div>
+					<h4>Please upload an image for Detection</h4>
+			<form action = "http://localhost:5000/predict" id="upload-file" method="post" enctype="multipart/form-data">
+				<label for="imageUpload" class="upload-label" style="background-color: #f83f9c;border: none;">
+					Choose...
+				</label>
+				<input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+			</form>
+			
+
+			<div class="image-section">
+				<div class="img-preview"  >
+					<div id="imagePreview" style="border:none;">
+					</div>
+				</div>
+				<div>
+					<br>
+					<button type="button" class="btn btn-info btn-lg " id="btn-predict" style="background-color: #fa5dac;border: none;" >Predict</button>
+				</div>
+			</div>
+
+			<div class="loader" style="display:none;"></div>
+
+			<h3>
+				<span id="result"> </span>
+			</h3>
+
+		</div>
+			</div>
+			 
+		  </div>
+		</div>
+		</div>
+    </div>
+</body>
+
+<footer>
+    <script src="../static/js/main.js" type="text/javascript"></script>    
+</footer>
+
+</html>
